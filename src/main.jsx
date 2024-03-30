@@ -7,7 +7,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Exploring from './Exploring/Exploring';
+
+import Home from './Home/Home';
 
 
 
@@ -15,7 +16,7 @@ import Exploring from './Exploring/Exploring';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Exploring></Exploring>,
+    element: <Home></Home>,
   },
 ]);
 
