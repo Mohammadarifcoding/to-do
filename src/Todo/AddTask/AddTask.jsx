@@ -5,12 +5,12 @@ const AddTask = ({AddingTask,openModal, setOpenModal}) => {
     return (
         <div>
         <div onClick={() => setOpenModal(false)} className={`fixed z-[100] flex text-black items-center justify-center ${openModal ? 'visible opacity-100' : 'invisible opacity-0'} inset-0 bg-black/20 backdrop-blur-sm duration-100 dark:bg-white/10`}>
-          <div onClick={(e_) => e_.stopPropagation()} className={`text- absolute max-w-2xl rounded-lg bg-white p-6 drop-shadow-lg dark:bg-black dark:text-white ${openModal ? 'scale-1 opacity-1 duration-300' : 'scale-0 opacity-0 duration-150'}`}>
+          <div onClick={(e_) => e_.stopPropagation()} className={`text- absolute max-w-2xl min-w-[300px] rounded-lg bg-white p-5 drop-shadow-lg dark:bg-black dark:text-white ${openModal ? 'scale-1 opacity-1 duration-300' : 'scale-0 opacity-0 duration-150'}`}>
           <h2 className="mb-9 text-center text-2xl font-bold text-white lg:mb-11 lg:text-[28px]">
                Add New Task
                 </h2>
 
-                <div className="space-y-9 text-white lg:space-y-10">
+                <div className="space-y-3 text-white lg:space-y-5">
                     <div className="space-y-2 lg:space-y-3">
                         <label htmlFor="title">Title</label>
                         <input
@@ -62,8 +62,8 @@ const AddTask = ({AddingTask,openModal, setOpenModal}) => {
                     </div>
                 </div>
 
-            <div className="flex justify-between">
-              <button onClick={() => setOpenModal(false)} className="me-2 rounded-sm bg-green-700 px-6 py-[6px] text-white">Ok</button>
+            <div className="flex justify-between pt-5">
+              <button onClick={()=>(AddingTask(Task))} className="me-2 rounded-sm bg-green-700 px-6 py-[6px] text-white">Ok</button>
               <button onClick={() => setOpenModal(false)} className="rounded-sm border border-red-600 px-6 py-[6px] text-red-600 duration-150 hover:bg-red-600 hover:text-white">Cancel</button>
             </div>
           </div>
