@@ -9,6 +9,7 @@ import {
 
 
 import Home from './Home/Home';
+import Layout from './Layout/Layout';
 
 
 
@@ -16,7 +17,13 @@ import Home from './Home/Home';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home>,
+    element: <Layout></Layout>,
+    children:[
+      {
+        path:'/',
+        element:<Home></Home>
+      }
+    ]
   },
 ]);
 
