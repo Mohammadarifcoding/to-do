@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import TaskAction from './AddTask/TaskAction';
 import AddTask from './AddTask/AddTask';
+import { addNewDataToLocalStorage, getDataFromLocalStorage } from '../Functions/Localstorage';
 
 
 const Todo = () => {
-   const [TaskData,setTaskData] = useState([...JSON.parse(localStorage.getItem('tasks'))])
+   const [TaskData,setTaskData] = useState([...getDataFromLocalStorage()])
    const [openModal, setOpenModal] = useState(false);
    console.log(TaskData)
 
-   const AddingTask = () => {
+   
 
+   const AddingTask = (e,task) => {
+    e.preventDefault()
+    setOpenModal(false)
+    addNewDataToLocalStorage(task)
+     console.log(task)
    }
    
     return (

@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 
 const AddTask = ({AddingTask,openModal, setOpenModal}) => {
-    
+    const [task,setTask] = useState({
+        taskId:crypto.randomUUID(),
+        title:'',
+        description :'',
+        tags :[],
+        prioty :'',
+    })
+  
+
+    console.log(task)
     return (
         <div>
         <div onClick={() => setOpenModal(false)} className={`fixed z-[100] flex text-black items-center justify-center ${openModal ? 'visible opacity-100' : 'invisible opacity-0'} inset-0 bg-black/20 backdrop-blur-sm duration-100 dark:bg-white/10`}>
@@ -10,7 +19,7 @@ const AddTask = ({AddingTask,openModal, setOpenModal}) => {
                Add New Task
                 </h2>
 
-                <div className="space-y-3 text-white lg:space-y-5">
+                <form onSubmit={(e)=>{AddingTask(e,task)}} className="space-y-3 text-white lg:space-y-5">
                     <div className="space-y-2 lg:space-y-3">
                         <label htmlFor="title">Title</label>
                         <input
@@ -18,6 +27,8 @@ const AddTask = ({AddingTask,openModal, setOpenModal}) => {
                             type="text"
                             name="title"
                             id="title"
+                            value={task.title}
+                            onChange={(e)=>{setTask({...task,title:e.target.value})}}
                             required
                         />
                     </div>
@@ -30,6 +41,8 @@ const AddTask = ({AddingTask,openModal, setOpenModal}) => {
                             name="description"
                             id="description"
                             required
+                            value={task.description}
+                            onChange={(e)=>{setTask({...task,description:e.target.value})}}
                         ></textarea>
                     </div>
 
@@ -42,6 +55,7 @@ const AddTask = ({AddingTask,openModal, setOpenModal}) => {
                                 name="tags"
                                 id="tags"
                                 required
+                                onChange={(e)=>{setTask({...task,tags:[e.target.value.slice(',')]})}}
                             />
                         </div>
 
@@ -52,6 +66,7 @@ const AddTask = ({AddingTask,openModal, setOpenModal}) => {
                                 name="priority"
                                 id="priority"
                                 required
+                                onChange={(e)=>{setTask({...task,prioty:e.target.value})}}
                             >
                                 <option value="">Select Priority</option>
                                 <option value="Low">Low</option>
@@ -60,12 +75,13 @@ const AddTask = ({AddingTask,openModal, setOpenModal}) => {
                             </select>
                         </div>
                     </div>
-                </div>
-
-            <div className="flex justify-between pt-5">
-              <button onClick={()=>(AddingTask(Task))} className="me-2 rounded-sm bg-green-700 px-6 py-[6px] text-white">Ok</button>
+                    <div className="flex justify-between pt-5">
+              <button type='submit'  className="me-2 rounded-sm bg-green-700 px-6 py-[6px] text-white">Ok</button>
               <button onClick={() => setOpenModal(false)} className="rounded-sm border border-red-600 px-6 py-[6px] text-red-600 duration-150 hover:bg-red-600 hover:text-white">Cancel</button>
             </div>
+                </form>
+
+           
           </div>
         </div>
       </div>
