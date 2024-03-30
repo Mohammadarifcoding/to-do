@@ -6,24 +6,12 @@ export default function TaskList({ tasks, onEdit, onDelete, onFav }) {
             <table className="table-fixed overflow-auto xl:w-full">
                 <thead>
                     <tr>
-                        <th className="p-4 pb-8 text-sm font-semibold capitalize w-[48px]"></th>
-                        <th className="p-4 pb-8 text-sm font-semibold capitalize w-[300px]">
+                        <th className="lg:p-4 md:p-3 sm:p-2 p-1 lg:pb-8 md:pb-6 sm:pb-4 pb-2 text-sm font-semibold capitalize w-[48px]"></th>
+                        <th className="lg:p-4 md:p-3 sm:p-2 p-1 lg:pb-8 md:pb-6 sm:pb-4 pb-2 text-sm font-semibold capitalize text-start w-[300px]">
                             {" "}
                             Title{" "}
                         </th>
-                        <th className="p-4 pb-8 text-sm font-semibold capitalize w-full">
-                            {" "}
-                            Description{" "}
-                        </th>
-                        <th className="p-4 pb-8 text-sm font-semibold capitalize md:w-[350px]">
-                            {" "}
-                            Tags{" "}
-                        </th>
-                        <th className="p-4 pb-8 text-sm font-semibold capitalize md:w-[100px]">
-                            {" "}
-                            Priority{" "}
-                        </th>
-                        <th className="p-4 pb-8 text-sm font-semibold capitalize md:w-[100px]">
+                        <th className="lg:p-4 md:p-3 sm:p-2 p-1 lg:pb-8 md:pb-6 sm:pb-4 pb-2 text-sm font-semibold capitalize md:w-[100px]">
                             {" "}
                             Options{" "}
                         </th>
@@ -43,24 +31,9 @@ export default function TaskList({ tasks, onEdit, onDelete, onFav }) {
                                     )}
                                 </button>
                             </td>
-                            <td>{task.title}</td>
+                            <td className="text-start  md:text-base sm:text-sm text-[12px]">{task.title}</td>
                             <td>
-                                <div>{task.description}</div>
-                            </td>
-                            <td>
-                                <ul className="flex justify-center gap-1.5 flex-wrap">
-                                    {task.tags.map((tag) => (
-                                        <li key={tag}>
-                                            <span className="inline-block h-5 whitespace-nowrap rounded-[45px] bg-[#00D991A1] px-2.5 text-sm capitalize text-[#F4F5F6]">
-                                                {tag}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </td>
-                            <td className="text-center">{task.priority}</td>
-                            <td>
-                                <div className="flex items-center justify-center space-x-3">
+                                <div className="flex items-center text-center md:text-base sm:text-sm text-[12px] justify-center space-x-3">
                                     <button
                                         className="text-red-500"
                                         onClick={() => onDelete(task.id)}

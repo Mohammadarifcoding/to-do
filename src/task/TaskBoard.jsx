@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import AddTaskModal from "./AddTaskModal";
+import NoTasksFound from "./NoTasksFound";
 import SearchTask from "./SearchTask";
 import TaskActions from "./TaskActions";
+import TaskInput from "./TaskInput";
 import TaskList from "./TaskList";
-import NoTasksFound from "./NoTasksFound";
 
 export default function TaskBoard() {
     const defaultTask = {
@@ -98,7 +98,7 @@ export default function TaskBoard() {
     return (
         <section className="mb-20" id="tasks">
             {showAddModal && (
-                <AddTaskModal
+                <TaskInput
                     onSave={handleAddEditTask}
                     onCloseClick={handleCloseClick}
                     taskToUpdate={taskToUpdate}
