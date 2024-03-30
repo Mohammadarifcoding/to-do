@@ -27,13 +27,13 @@ const Navbar = () => {
 </div>
 <div className="lg:flex  justify-between  hidden  ">
     <ul className="flex  justify-between gap-10">
-        <li className="group flex  cursor-pointer flex-col">
+        <Link to={'/'} className="group flex  cursor-pointer flex-col">
             Home <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-        </li>
+        </Link>
       
-        <li className="group flex  cursor-pointer flex-col">
+        <Link  to={'/todo'} className="group flex  cursor-pointer flex-col">
            To Do <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-        </li>
+        </Link>
     </ul>
     </div>
 
@@ -52,13 +52,13 @@ const Navbar = () => {
         >
                 <div className=" flex bg-[#393E46]  py-3 h-screen justify-between flex-col   ">
     <ul className="flex flex-col  justify-between text-white">
-        <li className="group flex  cursor-pointer hover:bg-sky-600 px-4 py-3 flex-col">
+        <Link to={'/todo'} className="group flex  cursor-pointer hover:bg-sky-600 px-4 py-3 flex-col">
             Home 
-        </li>
+        </Link>
       
-        <li className="group flex  cursor-pointer hover:bg-sky-600 px-4 py-3 flex-col">
+        <Link to={'/todo'} className="group flex  cursor-pointer hover:bg-sky-600 px-4 py-3 flex-col">
             To Do 
-        </li>
+        </Link>
     </ul>
     </div>
         </Drawer>

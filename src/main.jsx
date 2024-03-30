@@ -10,6 +10,7 @@ import {
 
 import Home from './Home/Home';
 import Layout from './Layout/Layout';
+import Todo from './Todo/Todo';
 
 
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>
+      },
+      {
+        path:'/todo',
+        element:<Todo></Todo>
       }
     ]
   },
