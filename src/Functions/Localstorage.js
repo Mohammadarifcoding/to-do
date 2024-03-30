@@ -19,5 +19,8 @@ function DeleteDataFormLocalStorage(id){
     localStorage.setItem('tasks',JSON.stringify(findTheData))
 }
 
+function DeleteAllData(){
+    localStorage.clear('tasks')
+}
 
-export {getDataFromLocalStorage,addNewDataToLocalStorage,DeleteDataFormLocalStorage}
+export {getDataFromLocalStorage,addNewDataToLocalStorage,DeleteDataFormLocalStorage,DeleteAllData}

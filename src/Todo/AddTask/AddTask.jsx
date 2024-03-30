@@ -7,8 +7,9 @@ const AddTask = ({AddingTask,openModal, setOpenModal}) => {
         description :'',
         tags :[],
         prioty :'',
+        Status:'Pending'
     })
-  
+    
 
     console.log(task)
     return (
